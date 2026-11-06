@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tradly/core/utils/responsive.dart';
 import 'package:tradly/features/cart/domain/entity/cart_item.dart';
 import 'package:tradly/features/cart/presentation/provider/cart_provider.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
 
 class CartItemWidget extends StatelessWidget {
   const CartItemWidget({super.key, required this.cart});

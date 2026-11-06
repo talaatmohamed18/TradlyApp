@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:tradly/core/error/error_handler.dart';
-import 'package:tradly/core/error/failure.dart';
-import 'package:tradly/features/authentication/data/mapper/mapper.dart';
-import 'package:tradly/features/authentication/data/datasource/authentication_data_source.dart';
-import 'package:tradly/features/authentication/domain/entity/user.dart';
-import 'package:tradly/features/authentication/data/model/requests.dart';
-import 'package:tradly/features/authentication/domain/repository/authentication_repository.dart';
+
+import '../../../../core/error/error_handler.dart';
+import '../../../../core/error/failure.dart';
+import '../../domain/entity/user.dart';
+import '../../domain/repository/authentication_repository.dart';
+import '../datasource/authentication_data_source.dart';
+import '../mapper/mapper.dart';
+import '../model/requests.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final AuthenticationDataSource _authenticationDataSource;
@@ -44,13 +45,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
         registerRequest,
       );
       if (response.status == ApiInternalStatus.success) {
-        // success
-        // return either right
-        // return data
         return Right(response.toDomain());
       } else {
-        // failure -- return business error
-        // return either left
         return Left(
           Failure(
             ApiInternalStatus.failure,
@@ -69,13 +65,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     try {
       final response = await _authenticationDataSource.resetPassword(email);
       if (response.status == ApiInternalStatus.success) {
-        // success
-        // return either right
-        // return data =>support & contactUs message
         return Right(response.toDomain());
       } else {
-        // failure -- return business error
-        // return either left
         return Left(
           Failure(
             ApiInternalStatus.failure,

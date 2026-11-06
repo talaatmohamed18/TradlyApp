@@ -3,13 +3,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tradly/core/utils/responsive.dart';
 import 'package:tradly/features/products/domain/entity/product.dart';
-import 'package:tradly/presentation/common/widgets/card_view.dart';
-import 'package:tradly/presentation/common/widgets/categories_widget.dart';
-import 'package:tradly/presentation/common/widgets/title_with_seeall_btn.dart';
+import 'package:tradly/core/widgets/card_view.dart';
+import 'package:tradly/core/widgets/categories_widget.dart';
+import 'package:tradly/core/widgets/title_with_seeall_btn.dart';
 import 'package:tradly/features/products/presentation/screen/product_details_screen.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
-import 'package:tradly/presentation/resourcses/values_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/values_manager.dart';
 
 class HomeContent extends StatelessWidget {
   final List<Product> homeData;

@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tradly/features/products/presentation/screen/product_details_screen.dart';
 import 'package:tradly/features/browse/presentation/providers/search_products_notifier.dart';
 import 'package:tradly/features/browse/presentation/providers/search_query_provider.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
-import 'package:tradly/presentation/resourcses/values_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/values_manager.dart';
 
 class BrowsePage extends ConsumerWidget {
   const BrowsePage({super.key});

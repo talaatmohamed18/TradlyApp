@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tradly/features/cart/presentation/widgets/cart_body.dart';
 import 'package:tradly/features/cart/presentation/provider/cart_provider.dart';
 import 'package:tradly/features/checkout/presentation/provider/address_provider.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
 
 class CartView extends ConsumerWidget {
   const CartView({super.key});

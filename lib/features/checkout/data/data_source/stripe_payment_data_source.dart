@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:tradly/env/env.dart';
+import 'package:tradly/core/env/env.dart';
 
 class StripePaymentDataSource {
   final Dio dio;

@@ -1,14 +1,13 @@
-import 'package:tradly/core/network/app_api.dart';
-import 'package:tradly/features/authentication/data/model/requests.dart';
-
-import 'package:tradly/features/authentication/data/model/responses.dart';
+import '../../../../core/network/auth_api.dart';
+import '../model/requests.dart';
+import '../model/responses.dart';
 
 abstract class AuthenticationDataSource {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);
 
-  Future<ResetPasswordResponse> resetPassword(String email);
-
   Future<AuthenticationResponse> register(RegisterRequest registerRequest);
+
+  Future<ResetPasswordResponse> resetPassword(String email);
 }
 
 class AuthenticationDataSourceImpl implements AuthenticationDataSource {
@@ -25,11 +24,6 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
   }
 
   @override
-  Future<ResetPasswordResponse> resetPassword(String email) async {
-    return await _appServiceClient.resetPassword(email);
-  }
-
-  @override
   Future<AuthenticationResponse> register(
     RegisterRequest registerRequest,
   ) async {
@@ -39,5 +33,10 @@ class AuthenticationDataSourceImpl implements AuthenticationDataSource {
       registerRequest.email,
       registerRequest.password,
     );
+  }
+
+  @override
+  Future<ResetPasswordResponse> resetPassword(String email) async {
+    return await _appServiceClient.resetPassword(email);
   }
 }

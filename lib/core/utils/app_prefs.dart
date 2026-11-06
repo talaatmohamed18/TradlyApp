@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly/presentation/resourcses/language_manager.dart';
+import 'package:tradly/core/resourcses/language_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String prefsKeyLanguage = "prefsKeyLanguage";

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tradly/presentation/common/widgets/card_view.dart';
+import 'package:tradly/core/widgets/card_view.dart';
 import 'package:tradly/features/products/presentation/screen/product_details_screen.dart';
 import 'package:tradly/features/wishlist/presentation/provider/wishlist_provider.dart';
 

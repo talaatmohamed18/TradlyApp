@@ -7,7 +7,7 @@ import 'package:tradly/features/cart/presentation/widgets/cart_items_widget.dart
 import 'package:tradly/features/cart/domain/entity/cart_item.dart';
 import 'package:tradly/features/cart/presentation/provider/cart_provider.dart';
 import 'package:tradly/features/checkout/presentation/screen/payment_option_screen.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
 
 class CartBody extends StatelessWidget {
   const CartBody({super.key, required this.cart, required this.address});

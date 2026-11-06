@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tradly/core/utils/app_prefs.dart';
 import 'package:tradly/core/di/di.dart';
-import '../../presentation/resourcses/routes_manager.dart';
-import '../../presentation/resourcses/theme_manager.dart';
+import '../resourcses/routes_manager.dart';
+import '../resourcses/theme_manager.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class TradlyApp extends StatefulWidget {

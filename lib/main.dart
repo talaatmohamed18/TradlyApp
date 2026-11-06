@@ -3,23 +3,25 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:tradly/core/storage/hive_config.dart';
-import 'package:tradly/env/env.dart';
+import 'package:tradly/core/env/env.dart';
 import 'package:tradly/features/cart/data/data_source/cart_local_data_source.dart';
 import 'package:tradly/features/wishlist/data/data_source/wishlist_local_data_source.dart';
-import 'package:tradly/presentation/resourcses/language_manager.dart';
+import 'package:tradly/core/resourcses/language_manager.dart';
 import 'core/utils/app.dart';
 import 'core/di/di.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initAppModule();
   Stripe.publishableKey = Env.publishKey;
-  await Stripe.instance.applySettings();
-  await EasyLocalization.ensureInitialized();
+  await initAppModule();
   await HiveConfig.initHive();
-  await instance<CartLocalDataSource>().init();
-  await instance<WishlistLocalDataSource>().init();
+  await Future.wait([
+    EasyLocalization.ensureInitialized(),
+    instance<CartLocalDataSource>().init(),
+    instance<WishlistLocalDataSource>().init(),
+    Stripe.instance.applySettings(),
+  ]);
   runApp(
     ProviderScope(
       child: EasyLocalization(
