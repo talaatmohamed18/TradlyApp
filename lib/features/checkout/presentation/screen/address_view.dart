@@ -5,9 +5,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:tradly/features/checkout/domain/entity/address.dart';
 import 'package:tradly/features/checkout/presentation/provider/address_provider.dart';
 import 'package:tradly/features/checkout/presentation/provider/location_provider.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
-import 'package:tradly/presentation/resourcses/values_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/values_manager.dart';
 
 class AddAddressScreen extends ConsumerStatefulWidget {
   const AddAddressScreen({super.key});

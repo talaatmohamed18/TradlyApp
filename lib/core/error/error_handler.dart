@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tradly/core/error/failure.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
 
 class ErrorHandler implements Exception {
   late Failure failure;

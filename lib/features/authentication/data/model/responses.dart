@@ -2,9 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'responses.g.dart';
 
-//
-//JsonSerializableGenerator
-//
 @JsonSerializable()
 class BaseResponse {
   int? status;

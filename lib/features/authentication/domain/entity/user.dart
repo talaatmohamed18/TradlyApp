@@ -1,4 +1,3 @@
-// login model
 class Customer {
   String id;
   String name;

@@ -1,39 +1,38 @@
 import 'package:dio/dio.dart';
-import 'package:tradly/core/utils/app_prefs.dart';
-import 'package:tradly/core/network/test_api.dart';
-// import 'package:tradly/core/utils/local_data_source.dart';
-import 'package:tradly/core/network/app_api.dart';
-import 'package:tradly/core/network/dio_factory.dart';
-import 'package:tradly/features/authentication/data/datasource/authentication_data_source.dart';
-import 'package:tradly/features/authentication/data/repository/authentication_repository_impl.dart';
-import 'package:tradly/features/authentication/domain/repository/authentication_repository.dart';
-import 'package:tradly/features/cart/data/data_source/cart_local_data_source.dart';
-import 'package:tradly/features/cart/data/repository/cart_repository_impl.dart';
-import 'package:tradly/features/cart/domain/repository/cart_repository.dart';
-import 'package:tradly/features/checkout/data/data_source/stripe_payment_data_source.dart';
-import 'package:tradly/features/products/data/data_source/products_data_source.dart';
-import 'package:tradly/features/products/data/repository/products_repository_impl.dart';
-import 'package:tradly/features/products/domain/usecase/get_category_products_usecase.dart';
-import 'package:tradly/features/products/domain/repository/products_repository.dart';
-import 'package:tradly/features/products/domain/usecase/get_product_details_usecase.dart';
-import 'package:tradly/features/products/domain/usecase/get_products_usecase.dart';
-import 'package:tradly/features/authentication/domain/usecase/reset_password_usecase.dart';
-import 'package:tradly/features/authentication/domain/usecase/login_usecase.dart';
-import 'package:tradly/features/authentication/domain/usecase/register_usecase.dart';
-import 'package:tradly/features/products/domain/usecase/search_product_usecase.dart';
-import 'package:tradly/features/authentication/presentation/provider/login_viewmodel.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tradly/features/authentication/presentation/provider/register_viewmodel.dart';
-import 'package:tradly/features/wishlist/data/data_source/wishlist_local_data_source.dart';
-import 'package:tradly/features/wishlist/data/repository/wishlist_repository_impl.dart';
-import 'package:tradly/features/wishlist/domain/repository/wishlist_repository.dart';
-import '../../features/authentication/presentation/provider/resetpassword_view_model.dart';
+
+import '../../features/authentication/data/datasource/authentication_data_source.dart';
+import '../../features/authentication/data/repository/authentication_repository_impl.dart';
+import '../../features/authentication/domain/repository/authentication_repository.dart';
+import '../../features/authentication/domain/usecase/login_usecase.dart';
+import '../../features/authentication/domain/usecase/register_usecase.dart';
+import '../../features/authentication/domain/usecase/reset_password_usecase.dart';
+import '../../features/authentication/presentation/viewmodels/login_viewmodel.dart';
+import '../../features/authentication/presentation/viewmodels/register_viewmodel.dart';
+import '../../features/authentication/presentation/viewmodels/resetpassword_view_model.dart';
+import '../../features/cart/data/data_source/cart_local_data_source.dart';
+import '../../features/cart/data/repository/cart_repository_impl.dart';
+import '../../features/cart/domain/repository/cart_repository.dart';
+import '../../features/checkout/data/data_source/stripe_payment_data_source.dart';
+import '../../features/products/data/data_source/products_data_source.dart';
+import '../../features/products/data/repository/products_repository_impl.dart';
+import '../../features/products/domain/repository/products_repository.dart';
+import '../../features/products/domain/usecase/get_category_products_usecase.dart';
+import '../../features/products/domain/usecase/get_product_details_usecase.dart';
+import '../../features/products/domain/usecase/get_products_usecase.dart';
+import '../../features/products/domain/usecase/search_product_usecase.dart';
+import '../../features/wishlist/data/data_source/wishlist_local_data_source.dart';
+import '../../features/wishlist/data/repository/wishlist_repository_impl.dart';
+import '../../features/wishlist/domain/repository/wishlist_repository.dart';
+import '../network/auth_api.dart';
+import '../network/dio_factory.dart';
+import '../network/products_api.dart';
+import '../utils/app_prefs.dart';
 
 final GetIt instance = GetIt.instance;
 
 Future<void> initAppModule() async {
-  // Registering the AppPreferences class as a singleton instance
   final SharedPreferences sharedPrefs = await SharedPreferences.getInstance();
   instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
   instance.registerLazySingleton<AppPreferences>(
@@ -54,8 +53,6 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<AuthenticationRepository>(
     () => AuthenticationRepositoryImpl(instance()),
   );
-
-  // instance.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
 
   instance.registerLazySingleton<ProductsDataSource>(
     () => ProductsDataSourceImpl(instance()),

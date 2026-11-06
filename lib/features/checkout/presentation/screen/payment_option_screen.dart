@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/add_payment_method.dart';
 import '../widgets/payment_methods.dart';
 import '../widgets/delivery_address.dart';
 import '../widgets/price_details.dart';

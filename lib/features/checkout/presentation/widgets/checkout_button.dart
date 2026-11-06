@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tradly/features/cart/presentation/provider/cart_provider.dart';
 import 'package:tradly/features/checkout/presentation/provider/stripe_payment_provider.dart';
-import 'package:tradly/features/checkout/stripe_payment/payment_manager.dart';
-import 'package:tradly/presentation/resourcses/routes_manager.dart';
+import 'package:tradly/core/resourcses/routes_manager.dart';
 
 class CheckoutButton extends ConsumerWidget {
   const CheckoutButton({super.key});

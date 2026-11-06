@@ -6,10 +6,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tradly/features/products/domain/entity/product.dart';
 import 'package:tradly/features/cart/presentation/provider/cart_provider.dart';
 import 'package:tradly/features/wishlist/presentation/provider/wishlist_provider.dart';
-import 'package:tradly/presentation/resourcses/assets_manager.dart';
-import 'package:tradly/presentation/resourcses/colors_manager.dart';
-import 'package:tradly/presentation/resourcses/strings_manager.dart';
-import 'package:tradly/presentation/resourcses/values_manager.dart';
+import 'package:tradly/core/resourcses/assets_manager.dart';
+import 'package:tradly/core/resourcses/colors_manager.dart';
+import 'package:tradly/core/resourcses/strings_manager.dart';
+import 'package:tradly/core/resourcses/values_manager.dart';
 
 class ProductDetailsBody extends ConsumerWidget {
   final Product product;

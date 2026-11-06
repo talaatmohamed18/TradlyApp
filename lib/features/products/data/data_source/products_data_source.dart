@@ -1,4 +1,4 @@
-import 'package:tradly/core/network/test_api.dart';
+import 'package:tradly/core/network/products_api.dart';
 import 'package:tradly/features/products/data/model/product_model.dart';
 import 'package:tradly/features/products/data/model/products_response_model.dart';
 

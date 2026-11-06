@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:tradly/features/authentication/domain/entity/user.dart';
+
 import '../../../../core/error/failure.dart';
-import '../../data/model/requests.dart';
-import '../repository/authentication_repository.dart';
 import '../../../../core/usecase/base_usecase.dart';
+import '../../data/model/requests.dart';
+import '../entity/user.dart';
+import '../repository/authentication_repository.dart';
 
 class RegisterUsecase
     extends BaseUsecase<RegisterUsecaseInput, Authentication> {
